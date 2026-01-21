@@ -19,11 +19,10 @@ This file is the single source-of-truth for how AI assistants (Copilot and simil
 - Use this font across components and layout; do not introduce additional fonts without approval.
 
 ### Colors
-- **Base text color** (default body text): **must** reference `var(--base-text-color)` instead of hardcoding the hex value.
-- **Body background**: **must** reference `var(--background-color)` instead of hardcoding the hex value. (assume dark UI by default).
+- **Base text color** (default body text): will rely on the system base color defined in `var(--primary-text-color)` instead of hardcoding the hex value.
 
 ### Accents & Headings
-- General UI accent color : reference `var(--accent-color)` when styling accents.
+- General UI accent color : prefer to use Tailwind CSS teal color `--color-teal-300` for sitewide accents.
 - Headings **must** reference `var(--accent-color)` instead of hardcoding the hex value.
 
 ---

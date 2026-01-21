@@ -7,11 +7,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --accent-color: #e2e8f0;
+  --secondary-text-color: #e2e8f0;
+  --primary-text-color: theme(--color-slate-400);
+  --accent-color: theme(--color-teal-300);
 }
 
 body{
-  color: theme(--color-slate-400);
+  color: var(--primary-text-color);
   background-color: theme(--color-slate-900);
 }
 
