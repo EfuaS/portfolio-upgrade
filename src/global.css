@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, sans-serif;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --secondary-text-color: #e2e8f0;
+  --primary-text-color: theme(--color-slate-400);
+  --accent-color: theme(--color-teal-300);
+}
+
+body{
+  color: var(--primary-text-color);
+  background-color: theme(--color-slate-900);
+}
+
+h1 {
+  color: var(--accent-color);
+}
