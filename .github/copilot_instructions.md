@@ -37,16 +37,6 @@ This file is the single source-of-truth for how AI assistants (Copilot and simil
 
 ---
 
-## Routing (important)
-- This project uses **file-based routing** provided by the generated routing library (https://github.com/oedotme/generouted).
-- Routes are inferred from the **file and folder structure**.
-- When creating new pages or routes:
-  - Follow the existing routing folder conventions exactly.
-  - Do not introduce manual route configuration unless explicitly requested.
-  - Prefer adding or modifying route files over editing a central router.
-- Nested folders represent nested routes.
-- Route-level components should be kept in a separate `**route-folder**/components/` folder under the folder level.
-
 ## React & code style (opinionated)
 - Use **functional components** only (no class components).
 - Prefer **named exports** for components. Default exports are allowed for the main page component if needed.
@@ -56,7 +46,7 @@ This file is the single source-of-truth for how AI assistants (Copilot and simil
 - Use React hooks where appropriate. Avoid unnecessary re-renders.
 - Keep Return JSX readable: prefer descriptive variable names and short helper functions.
 - File naming: `PascalCase` for components, `camelCase` for folder naming — be consistent with repository examples.
-- Prefer **`src/components/`** for reusable UI components, **route folders** for pages controlled by the file-based router.
+- Add app-wide navigation ui in the **`src/features/navigation-ui`** folder.
 
 ---
 
