@@ -1,7 +1,6 @@
 import longHeadshot from "../../assets/headshot.png";
 import Typewriter from "typewriter-effect";
 import AOS from "aos";
-import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 export function Home() {

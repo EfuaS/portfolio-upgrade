@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import myHeadshot from "../../assets/headshot.png";
+import AOS from "aos";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,9 +16,14 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   const navItems: { label: string; path: string }[] = [
     { label: "Home", path: "/" },
-    { label: "About Me", path: "/about" },
+    { label: "My Story", path: "/about" },
     { label: "My Works", path: "/works" },
     { label: "Education", path: "/education" },
     { label: "Contact Me", path: "/contact" },
@@ -31,7 +37,11 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto py-4 flex items-center justify-between">
+      <nav
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        className="max-w-7xl mx-auto py-4 flex items-center justify-between"
+      >
         {/* Profile Image / Logo */}
         <div className="md:flex items-center hidden">
           <div className="size-14 rounded-full overflow-hidden border-2 border-teal-300 shadow-md hover:shadow-teal-300/50 transition-shadow duration-300">
