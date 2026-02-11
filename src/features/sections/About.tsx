@@ -48,13 +48,12 @@ export function About() {
   ];
 
   return (
-    <div className="pt-24 px-6 max-w-7xl mx-auto">
+    <div className="pt-36 md:pt-24 px-6 max-w-7xl mx-auto">
       <SectionHeader header="My Story" title="About the Developer" />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-4 lg:grid-rows-3 relative ">
         <CodeXml
-          size={400}
-          className="text-teal-900 animate-pulse absolute top-0 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none"
+          className="text-teal-900 size-52 md:size-100 animate-pulse absolute top-0 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none"
         />
 
         {/* Who am I card (2x2) */}
