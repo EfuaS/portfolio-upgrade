@@ -1,4 +1,4 @@
-import longHeadshot from "../../assets/headshot.png";
+import longHeadShot from "../../assets/headshot.png";
 import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import { useEffect } from "react";
@@ -11,7 +11,7 @@ export function Home() {
 
   return (
     <div className="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
-      <div className="h-[70vh] grid grid-cols-1  lg:grid-cols-2  items-center  ">
+      <div className="h-[80vh] grid grid-cols-1  lg:grid-cols-2  items-center">
         {/* Mobile view smaller image */}
         <div
           data-aos="zoom-in-left"
@@ -20,7 +20,7 @@ export function Home() {
         >
           <div className="size-full rounded-full shadow-xl overflow-hidden">
             <img
-              src={longHeadshot}
+              src={longHeadShot}
               alt="Profile"
               className="w-full h-full object-cover"
             />
@@ -35,7 +35,7 @@ export function Home() {
         >
           <div className="size-1/2 rounded-full shadow-xl overflow-hidden">
             <img
-              src={longHeadshot}
+              src={longHeadShot}
               alt="Profile"
               className="w-full h-full object-cover"
             />
@@ -57,8 +57,7 @@ export function Home() {
 
           {/* Name */}
           <h1
-            style={{ color: "var(--secondary-text-color)" }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-secondary-text-color!"
           >
             Lawrencia Efua Cobbina
           </h1>
@@ -113,13 +112,13 @@ export function Home() {
         <div
           data-aos="zoom-in-left"
           data-aos-duration="1000"
-          className="hidden lg:flex items-center justify-center h-full"
+          className="hidden lg:flex items-center justify-center h-[95%] "
         >
           <div className="size-full rounded-3xl shadow-xl overflow-hidden">
             <img
-              src={longHeadshot}
+              src={longHeadShot}
               alt="Profile"
-              className="w-full h-full object-cover"
+              className="size-full object-cover"
             />
           </div>
         </div>
