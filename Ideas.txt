@@ -1,0 +1,2 @@
+1. Mobile view navbar is fixed at bottom of screen and has icons like a mobile app.
+2. Redesign mobile view to have similar UI to web view but more compressed.
