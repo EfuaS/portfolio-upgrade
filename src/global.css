@@ -34,3 +34,54 @@ h1 {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
   color: #f1f5f9;
 }
+
+@keyframes breeze {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(-0.6deg);
+  }
+  50% {
+    transform: translateY(2px) rotate(0.4deg);
+  }
+  75% {
+    transform: translateY(-3px) rotate(-0.2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.breeze-card {
+  animation: breeze 7s ease-in-out infinite;
+  transform-origin: top left;
+}
+
+@keyframes jiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-2deg);
+  }
+  30% {
+    transform: rotate(2deg);
+  }
+  45% {
+    transform: rotate(-1.5deg);
+  }
+  60% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.hover-jiggle:hover {
+  animation: jiggle 0.5s ease-in-out;
+}
