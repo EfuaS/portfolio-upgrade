@@ -53,7 +53,7 @@ export function About() {
   ];
 
   return (
-    <div className="pt-36 md:pt-24 px-6 max-w-7xl mx-auto">
+    <section className="pt-36 md:pt-24 px-6 max-w-7xl mx-auto">
       <SectionHeader header="My Story" title="About the Developer" />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-4 lg:grid-rows-3 relative ">
@@ -180,6 +180,6 @@ export function About() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
