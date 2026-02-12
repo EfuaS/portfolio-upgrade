@@ -8,6 +8,7 @@ import {
   Palette,
   PenTool,
   PlaneTakeoff,
+  ShieldCheck,
   Smartphone,
 } from "lucide-react";
 import SectionHeader from "../navigation-ui/SectionHeader";
@@ -33,6 +34,10 @@ export function About() {
   ];
 
   const aspirations = [
+    {
+      label: "Microsoft AZ-204 Developer",
+      icon: <ShieldCheck size={20} className="text-amber-500" />,
+    },
     {
       label: "Flutter Engineer",
       icon: <Smartphone size={20} className="text-sky-500" />,

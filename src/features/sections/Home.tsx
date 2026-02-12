@@ -71,6 +71,7 @@ export function Home() {
                   "Microsoft Azure Developer",
                   "Microsoft Certified",
                   "Meta Certified",
+                  "Soon-to-be Flutter Developer",
                 ],
                 autoStart: true,
                 loop: true,
