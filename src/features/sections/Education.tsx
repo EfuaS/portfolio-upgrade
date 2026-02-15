@@ -14,26 +14,23 @@ export function Education() {
       title: "BSc Management Information Systems",
       institution: "Ashesi University",
       duration: "2018 - 2022",
-      description: `With a focus on software development, business analytics and project management, this is where my spark for software that
-         meets real-world needs was ignited. I worked with tools like Python, PHP, JavaScript, Apache, MYSQL to build my first full stack ecommerce website targeted at providing
-         a digital storefront for my Aunt's small Fabrics & Cosmetics shop.`,
+      description: `Studied software development, business analytics, and project management. Built a full stack ecommerce site for my Aunt's small Fabrics shop using PHP, Apache, and MySQL for the backend and HTML, CSS, and JavaScript for the frontend.`,
       link: "https://github.com/EfuaS/neighbourcare",
       icon: GraduationCap,
       tone: "from-teal-400 via-cyan-400 to-blue-500",
       noteTilt: "-rotate-[1deg]",
+      category: "Academic Roots",
     },
     {
       title: "National Service - Junior Software Developer",
       institution: "Accede Ghana",
       duration: "2022 - 2023",
-      description: `In Ghana, all graduates are required to complete a year of national service, and I had the opportunity
-       to serve as a Junior Software Developer at Accede Ghana.
-        During this time, I contributed to various software development projects across several industries, including FinTech, Community Outreach and Real Estate,
-         gaining hands-on experience in coding, debugging, and collaborating with a team of developers.`,
+      description: `Completed my one year national service as a Junior Software Developer, contributing to projects in FinTech, Community Outreach, and Real Estate, gaining hands-on coding and teamwork experience.`,
       link: null,
       icon: Workflow,
       tone: "from-emerald-400 via-teal-300 to-cyan-400",
       noteTilt: "rotate-[1deg]",
+      category: "Service Year",
     },
     {
       title: "Meta Certified Frontend Developer",
@@ -42,32 +39,32 @@ export function Education() {
       description: `Certified in modern frontend practice: HTML, CSS, JavaScript, and React. Proof that I keep pace with the craft as it evolves.`,
       link: "https://coursera.org/share/86ef3b4defd4235ad55a1aeac97b9478",
       icon: Award,
-      tone: "from-amber-300 via-orange-300 to-pink-400",
+      tone: "from-amber-500 via-orange-300 to-pink-500",
       noteTilt: "-rotate-[2deg]",
+      category: "Certification",
     },
     {
-      title: "React Software Engineer",
+      title: "Frontend Software Engineer",
       institution: "Accede Ghana",
       duration: "2019 - Present",
-      description: `Working as part of the JavaScript team, to help deliver high-quality software solutions to clients across various industries.
-      I have been involved in the development of several projects across various sectors. I have contributed to company growth by training and mentoring interns
+      description: `Helping to deliver high-quality software solutions to clients across various industries. I have also contributed to company growth by training and mentoring interns
       and other National Service Personnel.`,
       link: null,
       icon: Sparkles,
       tone: "from-fuchsia-300 via-purple-300 to-indigo-300",
       noteTilt: "rotate-[2deg]",
+      category: "Day Job",
     },
     {
       title: "In-Progress - Microsoft Azure Developer",
       institution: "Microsoft",
       duration: "Expected March 2026",
-      description: `Currently pursuing the Microsoft Azure Developer certification, which will further enhance my skills in cloud computing and Azure services.
-       This certification is expected to aid me in my journey to be a Consultant who is able to advise clients on solution from the dev stage 
-       to deployment and maintenance.`,
+      description: `Pursuing Microsoft Azure Developer certification to enhance my cloud computing and Azure skills for consulting and solution delivery from development to deployment.`,
       link: null,
       icon: Rocket,
       tone: "from-sky-300 via-teal-200 to-lime-300",
       noteTilt: "-rotate-[1deg]",
+      category: "Next-Up",
     },
   ];
 
@@ -111,41 +108,46 @@ export function Education() {
                         className={`absolute inset-0 opacity-65 bg-linear-to-br ${item.tone}`}
                       />
                       {/* Dark overlay on card bright colors to enhance readability */}
-                      <div className="absolute inset-0 bg-slate-950/60" />
+                      <div className="absolute inset-0 bg-slate-950/70" />
                       <div className="absolute top-1 left-4 h-8 w-6 bg-white/5 rotate-6 blur-[2px]" />
                       {/* Note card content */}
-                      <div className="relative space-y-1 mt-5">
-                        <h3 className="text-lg text-center font-semibold text-secondary-text-color! leading-snug">
-                          {item.title}
-                        </h3>
-                        <div className="flex justify-between pt-2">
-                          <p className="text-xs text-slate-200/90">
-                            {item.institution}{" "}
-                          </p>
-                          <p className="text-xs text-slate-300 font-semibold">
-                            {item.duration}
-                          </p>
-                        </div>
+                      <div className="relative flex flex-col gap-4 mt-4">
+                        <header className="flex items-start justify-between gap-3">
+                          <div className="space-y-2">
+                            <p className="text-[11px] uppercase tracking-[0.35em] text-slate-200/70">
+                              {item.category}
+                            </p>
+                            <div className="space-y-1">
+                              <h3 className="text-base font-semibold leading-snug text-secondary-text-color!">
+                                {item.title}
+                              </h3>
+                              <p className="text-xs text-slate-100/80">
+                                {item.institution} - {item.duration}
+                              </p>
+                            </div>
+                          </div>
+                        </header>
 
-                        <p
-                          className="mt-3 text-sm leading-relaxed"
-                          style={{ color: "var(--color-secondary-text-color)" }}
-                        >
+                        <div className="h-px w-full bg-linear-to-r from-white/50 via-white/10 to-transparent" />
+
+                        <p className="text-sm leading-relaxed text-slate-100/90">
                           {item.description}
                         </p>
 
-                        {/* Note bottom Action Link */}
-                        {item.link && (
-                          <a
-                            href={item.link}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-2 text-xs text-accent-color mt-3"
-                          >
-                            Check it out
-                            <ArrowUpRight size={14} />
-                          </a>
-                        )}
+                        <footer>
+                          {/* Note bottom Action Link */}
+                          {item.link && (
+                            <a
+                              href={item.link}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center gap-2 text-xs text-accent-color mt-3"
+                            >
+                              Check it out
+                              <ArrowUpRight size={14} />
+                            </a>
+                          )}
+                        </footer>
                       </div>
                     </div>
                   </div>
