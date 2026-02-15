@@ -10,7 +10,7 @@ export function Home() {
   }, []);
 
   return (
-    <div className="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
+    <section className="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
       <div className="h-[80vh] grid grid-cols-1  lg:grid-cols-2  items-center">
         {/* Mobile view smaller image */}
         <div
@@ -71,6 +71,7 @@ export function Home() {
                   "Microsoft Azure Developer",
                   "Microsoft Certified",
                   "Meta Certified",
+                  "Soon-to-be Flutter Developer",
                 ],
                 autoStart: true,
                 loop: true,
@@ -123,6 +124,6 @@ export function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

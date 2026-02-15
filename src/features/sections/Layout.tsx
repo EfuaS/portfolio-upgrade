@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { Home } from "./Home";
 import { About } from "./About";
 import { Works } from "./Works";
+import { Education } from "./Education";
 
 export function Layout() {
   return (
@@ -12,6 +13,7 @@ export function Layout() {
       <main className="space-y-32 md:space-y-16">
         <Home />
         <About />
+        <Education />
         <Works />
       </main>
     </div>
