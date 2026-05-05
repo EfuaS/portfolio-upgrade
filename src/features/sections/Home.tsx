@@ -2,6 +2,7 @@ import longHeadShot from "../../assets/headshot.png";
 import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import { useEffect } from "react";
+import DownloadResume from "../navigation-ui/DownloadResume";
 
 export function Home() {
   useEffect(() => {
@@ -107,6 +108,8 @@ export function Home() {
               <p className="text-sm  mt-1">Certificates</p>
             </div>
           </div>
+
+          <DownloadResume/>
         </div>
 
         {/* Right Side - Image Frame */}

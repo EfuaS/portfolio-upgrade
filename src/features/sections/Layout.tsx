@@ -5,6 +5,7 @@ import { Home } from "./Home";
 import { About } from "./About";
 import { Works } from "./Works";
 import { Education } from "./Education";
+import Footer from "./Footer";
 
 export function Layout() {
   return (
@@ -16,6 +17,7 @@ export function Layout() {
         <Education />
         <Works />
       </main>
+      <Footer/>
     </div>
   );
 }

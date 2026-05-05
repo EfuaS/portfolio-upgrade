@@ -26,7 +26,6 @@ export function Header() {
     { label: "My Story", path: "/about" },
     { label: "My Journey", path: "/education" },
     { label: "My Works", path: "/works" },
-    { label: "Contact Me", path: "/contact" },
   ];
 
   return (
