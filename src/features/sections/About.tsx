@@ -13,44 +13,44 @@ import {
 } from "lucide-react";
 import SectionHeader from "../navigation-ui/SectionHeader";
 
-export function About() {
-  const coreStack = [
-    {
-      name: "React",
-      icon: <CodeXml size={22} className="text-sky-500" />,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: <Palette size={22} className="text-cyan-300" />,
-    },
-    {
-      name: "TypeScript",
-      icon: <ListCheck size={22} className="text-emerald-500" />,
-    },
-    {
-      name: "Figma",
-      icon: <PenTool size={22} className="text-pink-500" />,
-    },
-  ];
+const coreStack = [
+  {
+    name: "React",
+    icon: <CodeXml size={22} className="text-sky-500" />,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <Palette size={22} className="text-cyan-300" />,
+  },
+  {
+    name: "TypeScript",
+    icon: <ListCheck size={22} className="text-emerald-500" />,
+  },
+  {
+    name: "Figma",
+    icon: <PenTool size={22} className="text-pink-500" />,
+  },
+];
 
-  const aspirations = [
-    {
-      label: "Microsoft AZ-204 Developer",
-      icon: <ShieldCheck size={20} className="text-amber-500" />,
-    },
-    {
-      label: "Flutter Engineer",
-      icon: <Smartphone size={20} className="text-sky-500" />,
-    },
-    {
-      label: "Travel the world",
-      icon: <PlaneTakeoff size={20} className="text-rose-400" />,
-    },
-    {
-      label: "Frontend Consultant",
-      icon: <GraduationCap size={20} className="text-lime-300" />,
-    },
-  ];
+const aspirations = [
+  {
+    label: "Microsoft AZ-204 Developer",
+    icon: <ShieldCheck size={20} className="text-amber-500" />,
+  },
+  {
+    label: "Flutter Engineer",
+    icon: <Smartphone size={20} className="text-sky-500" />,
+  },
+  {
+    label: "Travel the world",
+    icon: <PlaneTakeoff size={20} className="text-rose-400" />,
+  },
+  {
+    label: "Frontend Consultant",
+    icon: <GraduationCap size={20} className="text-lime-300" />,
+  },
+];
+export function About() {
 
   return (
     <section className="pt-36 md:pt-24 px-6 max-w-7xl mx-auto">
