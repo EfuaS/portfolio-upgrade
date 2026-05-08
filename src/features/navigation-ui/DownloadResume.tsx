@@ -1,10 +1,9 @@
 import { Download } from "lucide-react";
-import resume from '../../../public/Resume-Lawrencia-Cobbina.docx.pdf';
 
 export default function DownloadResume() {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = resume;
+    link.href = "/Resume-Lawrencia-Cobbina.docx.pdf?url";
     link.download = 'Resume-Lawrencia-Cobbina.docx.pdf';
     link.click();
   };
