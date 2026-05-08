@@ -34,7 +34,7 @@ const coreStack = [
 
 const aspirations = [
   {
-    label: "Microsoft AZ-204 Developer",
+    label: "Node.js Backend Developer",
     icon: <ShieldCheck size={20} className="text-amber-500" />,
   },
   {
@@ -51,15 +51,12 @@ const aspirations = [
   },
 ];
 export function About() {
-
   return (
     <section id="my-story" className="pt-36 md:pt-24 px-6 max-w-7xl mx-auto">
       <SectionHeader header="My Story" title="About the Developer" />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-4 lg:grid-rows-3 relative ">
-        <CodeXml
-          className="text-teal-900 size-52 md:size-100 animate-pulse absolute top-0 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none"
-        />
+        <CodeXml className="text-teal-900 size-52 md:size-100 animate-pulse absolute top-0 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none" />
 
         {/* Who am I card (2x2) */}
         <div
@@ -72,22 +69,43 @@ export function About() {
               className="text-teal-300 rounded-full bg-teal-300/10 p-2.5"
               size={40}
             />
-            <h3 className="mt-0 text-lg font-semibold tracking-wide">
+            <h3 className="text-lg font-semibold tracking-wide">
               Who Am I?
             </h3>
           </div>
 
           <div className="flex-1 grid">
-            <p className="mt-6 m-auto text-primary-text-color leading-relaxed ">
-              I build thoughtful, fast interfaces that balance craft with
-              pragmatism. After years of{" "}
+            <p className="mt-2 m-auto text-primary-text-color leading-relaxed ">
+              I build thoughtful, high-performance interfaces where
               <span className="font-bold text-secondary-text-color/85">
                 {" "}
-                shipping product UI{" "}
+                clean component architecture
+              </span>{" "}
+              meets pragmatic product design. Having
+              <span className="font-bold text-secondary-text-color/85">
+                {" "}
+                shipped large-scale applications
+              </span>{" "}
+              with{" "}
+              <span className="font-bold text-secondary-text-color/85">
+                {" "}
+                complex data requirements
+              </span>{" "}
+              , I prioritize tight feedback loops between design and engineering
+              to ensure the final pixel serves the user's intent.
+            </p>
+            <p className="mt-6 m-auto text-primary-text-color leading-relaxed ">
+              Currently, I am expanding my focus across to{" "}
+              <span className="font-bold text-secondary-text-color/85">
+                full stack{" "}
               </span>
-              , I have a habit of pairing clean component architecture with
-              crisp visuals, mentoring teammates, and keeping a tight feedback
-              loop between design and engineering.
+              to better understand the end-to-end lifecycle of a product. My
+              'North Star' is to{" "}
+              <span className="font-bold text-secondary-text-color/85">
+                lead engineering teams
+              </span>{" "}
+              in building cohesive, scalable systems where technical rigor and
+              visual excellence are never mutually exclusive.
             </p>
           </div>
         </div>
