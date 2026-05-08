@@ -31,7 +31,7 @@ export function Works() {
           isCentered={false}
         />
       </div>
-      <div className="col-span-2 grid place-content-center ">
+      <div data-aos="zoom-out-up" data-aos-duration="2500" className="col-span-2 grid place-content-center ">
         <div className="glass-card h-[70vh] w-4xl">
           <div className="bg-gray-400/5 h-[75%] rounded-t-xl overflow-hidden">
             <img src={headShort} className="object-contain size-full hover:scale-115 duration-1000 ease-in-out" />
