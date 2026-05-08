@@ -24,7 +24,7 @@ export function Education() {
     {
       title: "National Service - Junior Software Developer",
       institution: "Accede Ghana",
-      duration: "2022 - 2023",
+      duration: "(2022 - 2023)",
       description: `Completed my one year national service as a Junior Software Developer, contributing to projects in FinTech, Community Outreach, and Real Estate, gaining hands-on coding and teamwork experience.`,
       link: null,
       icon: Workflow,
@@ -46,7 +46,7 @@ export function Education() {
     {
       title: "Frontend Software Engineer",
       institution: "Accede Ghana",
-      duration: "2019 - Present",
+      duration: "(2019 - Present)",
       description: `Helping to deliver high-quality software solutions to clients across various industries. I have also contributed to company growth by training and mentoring interns
       and other National Service Personnel.`,
       link: null,
@@ -56,10 +56,21 @@ export function Education() {
       category: "Day Job",
     },
     {
-      title: "In-Progress - Microsoft Azure Developer",
+      title: "Microsoft Certified: Azure Developer Associate",
       institution: "Microsoft",
-      duration: "Expected March 2026",
-      description: `Pursuing Microsoft Azure Developer certification to enhance my cloud computing and Azure skills for consulting and solution delivery from development to deployment.`,
+      duration: "April 2026",
+      description: `I achieved my Microsoft Azure Developer certification to enhance my cloud computing and Azure skills for consulting and solution delivery from development to deployment.`,
+      link: "https://learn.microsoft.com/api/credentials/share/en-gb/LawrenciaCobbina-0769/112CE798D492E070?sharingId=F21A506CC64DCEE8",
+      icon: Award,
+      tone: "from-sky-300 via-teal-200 to-lime-300",
+      noteTilt: "-rotate-[1deg]",
+      category: "Certification",
+    },
+    {
+      title: "In-Progress - Node.js Backend Developer",
+      institution: "IBM",
+      duration: "Current",
+      description: `Pursuing a course in Node.js backend development to become a full stack developer.`,
       link: null,
       icon: Rocket,
       tone: "from-sky-300 via-teal-200 to-lime-300",
@@ -74,10 +85,6 @@ export function Education() {
 
       {/* Timeline of Developer Journey */}
       <div className="relative">
-        {/* Faded edges */}
-        {/* <div className="pointer-events-none absolute inset-y-0 left-0 z-50 w-28 bg-linear-to-r from-[#0f172b] via-[#0f172b]/90 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-50 w-28 bg-linear-to-l from-[#0f172b] via-[#0f172b]/90 to-transparent" /> */}
-
         <div className="relative overflow-x-auto pb-6  pl-6">
           {/* Timeline note card */}
           <div className="flex gap-6 md:gap-8 min-w-full snap-x snap-mandatory">
@@ -87,7 +94,7 @@ export function Education() {
                 <article
                   key={item.title}
                   className="relative snap-start"
-                  data-aos="fade-up"
+                  data-aos="zoom-in"
                   data-aos-delay={index * 250}
                 >
                   <div className="flex flex-col items-start gap-4 relative">
