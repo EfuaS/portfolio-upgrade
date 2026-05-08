@@ -1,11 +1,18 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
 import myHeadshot from "../../assets/headshot.png";
 import AOS from "aos";
+import { useScrollSpy } from "../../custom-hooks/useScrollSpy";
+
+  const navItems: { label: string; path: string }[] = [
+    { label: "Home", path: "home" },
+    { label: "My Story", path: "my-story" },
+    { label: "My Journey", path: "my-journey" },
+    { label: "My Works", path: "my-works" },
+  ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const activeSection = useScrollSpy(navItems.map((i) => i.path));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,12 +28,6 @@ export function Header() {
     AOS.refresh();
   }, []);
 
-  const navItems: { label: string; path: string }[] = [
-    { label: "Home", path: "/" },
-    { label: "My Story", path: "/about" },
-    { label: "My Journey", path: "/education" },
-    { label: "My Works", path: "/works" },
-  ];
 
   return (
     <header
@@ -53,21 +54,21 @@ export function Header() {
         </div>
 
         {/* Navigation Links */}
-        <ul className="flex items-center md:gap-6 overflow-x-auto md: overflow-hidden">
+        <ul className="flex items-center md:gap-6 overflow-x-auto md:overflow-hidden">
           {navItems.map((item) => {
-            const isActive = location.pathname === item.path;
+            const isActive = activeSection === item.path;
             return (
               <li key={item.label}>
-                <Link
-                  to={item.path}
-                  className={`text-nowrap transition-all duration-300 px-3 py-1.5 rounded-full hover:bg-teal-400/10 hover:text-teal-300 ${
+                <a
+                  href={"#"+item.path}
+                  className={`text-nowrap ease-in-out duration-300 px-3 py-1.5 rounded-full hover:bg-teal-400/10 hover:text-teal-300 ${
                     isActive
                       ? "text-teal-300 font-semibold text-lg animate-pulse"
-                      : "text-[#e2e8f0] font-light text-normal"
+                      : "text-secondary-text-color font-light text-normal"
                   }`}
                 >
                   {item.label}
-                </Link>
+                </a>
               </li>
             );
           })}

@@ -69,16 +69,16 @@ export function Education() {
   ];
 
   return (
-    <section className="pt-24 px-6 max-w-[80vw] mx-auto">
+    <section id="my-journey" className="pt-24 w-full mx-auto">
       <SectionHeader header="My Journey" title="Education & Experience" />
 
       {/* Timeline of Developer Journey */}
-      <div className="relative mt-12 pr-20">
+      <div className="relative">
         {/* Faded edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-50 w-28 bg-linear-to-r from-[#0f172b] via-[#0f172b]/90 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-50 w-28 bg-linear-to-l from-[#0f172b] via-[#0f172b]/90 to-transparent" />
+        {/* <div className="pointer-events-none absolute inset-y-0 left-0 z-50 w-28 bg-linear-to-r from-[#0f172b] via-[#0f172b]/90 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-50 w-28 bg-linear-to-l from-[#0f172b] via-[#0f172b]/90 to-transparent" /> */}
 
-        <div className="relative overflow-x-auto pb-6  pl-24">
+        <div className="relative overflow-x-auto pb-6  pl-6">
           {/* Timeline note card */}
           <div className="flex gap-6 md:gap-8 min-w-full snap-x snap-mandatory">
             {timeline.map((item, index) => {

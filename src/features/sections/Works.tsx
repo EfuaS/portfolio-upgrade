@@ -23,7 +23,7 @@ import { CodeXml, ListCheck, Palette, PenTool } from "lucide-react";
 
 export function Works() {
   return (
-    <section className="grid grid-cols-3 h-screen ">
+    <section id="my-works" className="grid grid-cols-3 h-screen ">
       <div className="col-span-1 grid place-content-center">
         <SectionHeader
           title="GrantSpace"
