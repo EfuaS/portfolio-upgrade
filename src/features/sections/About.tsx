@@ -138,14 +138,14 @@ export function About() {
         >
           <div>
             <p className="text-4xl text-center font-bold text-emerald-300">
-              3+
+              4
             </p>
             <p className="text-sm text-slate-400 font-semibold">
               Years of experience
             </p>
           </div>
           <div>
-            <p className="text-4xl text-center font-bold text-emerald-300">8</p>
+            <p className="text-4xl text-center font-bold text-emerald-300">7</p>
             <p className="text-sm text-slate-400 font-semibold">
               Projects shipped
             </p>
