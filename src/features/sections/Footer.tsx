@@ -1,10 +1,16 @@
 import {  MailPlus, Smile } from "lucide-react";
 import DownloadResume from "../navigation-ui/DownloadResume";
+import AOS from "aos";
+import { useEffect } from "react";
 
 export default function Footer() {
+    useEffect(() => {
+      AOS.init();
+      AOS.refresh();
+    }, []);
   return (
-    <footer className="bg-[#020617] h-[30vh] ">
-      <div className="px-32 pt-10 grid grid-cols-2 ">
+    <footer className="bg-[#020617] min-h-[30vh] rounded-t-[100px]" data-aos="fade-up">
+      <div className="px-32 pt-10 grid grid-cols-2 pb-16 ">
         <div className="space-y-3">
           <h2 className="font-medium text-3xl text-secondary-text-color">
             Thanks for stopping by!
