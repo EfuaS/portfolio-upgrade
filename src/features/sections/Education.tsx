@@ -8,77 +8,84 @@ import {
 } from "lucide-react";
 import SectionHeader from "../navigation-ui/SectionHeader";
 
+const timeline = [
+  {
+    title: "BSc Management Information Systems",
+    institution: "Ashesi University",
+    duration: "2018 - 2022",
+    description: `Studied software development, business analytics, and project management. Built a full stack ecommerce site for my Aunt's small Fabrics shop using PHP, Apache, and MySQL for the backend and HTML, CSS, and JavaScript for the frontend.`,
+    link: "https://github.com/EfuaS/neighbourcare",
+    icon: GraduationCap,
+    tone: "from-teal-400 via-cyan-400 to-blue-500",
+    noteTilt: "-rotate-[1deg]",
+    category: "Academic Roots",
+  },
+  {
+    title: "National Service - Junior Software Developer",
+    institution: "Accede Ghana",
+    duration: "(2022 - 2023)",
+    description: `Completed my one year national service as a Junior Software Developer, contributing to projects in FinTech, Community Outreach, and Real Estate, gaining hands-on coding and teamwork experience.`,
+    link: null,
+    icon: Workflow,
+    tone: "from-emerald-400 via-teal-300 to-cyan-400",
+    noteTilt: "rotate-[1deg]",
+    category: "Service Year",
+  },
+  {
+    title: "Meta Certified Frontend Developer",
+    institution: "Meta",
+    duration: "2023",
+    description: `Certified in modern frontend practice: HTML, CSS, JavaScript, and React. Proof that I keep pace with the craft as it evolves.`,
+    link: "https://coursera.org/share/86ef3b4defd4235ad55a1aeac97b9478",
+    icon: Award,
+    tone: "from-amber-500 via-orange-300 to-pink-500",
+    noteTilt: "-rotate-[2deg]",
+    category: "Certification",
+  },
+  {
+    title: "Frontend Software Engineer",
+    institution: "Accede Ghana",
+    duration: "(2019 - Present)",
+    description: `Helping to deliver high-quality software solutions to clients across various industries. I have also contributed to company growth by training and mentoring interns
+    and other National Service Personnel.`,
+    link: null,
+    icon: Sparkles,
+    tone: "from-fuchsia-300 via-purple-300 to-indigo-300",
+    noteTilt: "rotate-[2deg]",
+    category: "Day Job",
+  },
+  {
+    title: "Microsoft Certified: Azure Developer Associate",
+    institution: "Microsoft",
+    duration: "April 2026",
+    description: `I achieved my Microsoft Azure Developer certification to enhance my cloud computing and Azure skills for consulting and solution delivery from development to deployment.`,
+    link: "https://learn.microsoft.com/api/credentials/share/en-gb/LawrenciaCobbina-0769/112CE798D492E070?sharingId=F21A506CC64DCEE8",
+    icon: Award,
+    tone: "from-sky-300 via-teal-200 to-lime-300",
+    noteTilt: "-rotate-[1deg]",
+    category: "Certification",
+  },
+  {
+    title: "In-Progress - Node.js Backend Developer",
+    institution: "IBM",
+    duration: "Current",
+    description: `Pursuing a course in Node.js backend development to become a full stack developer.`,
+    link: null,
+    icon: Rocket,
+    tone: "from-sky-300 via-teal-200 to-lime-300",
+    noteTilt: "-rotate-[1deg]",
+    category: "Next-Up",
+  },
+];
 export function Education() {
-  const timeline = [
-    {
-      title: "BSc Management Information Systems",
-      institution: "Ashesi University",
-      duration: "2018 - 2022",
-      description: `Studied software development, business analytics, and project management. Built a full stack ecommerce site for my Aunt's small Fabrics shop using PHP, Apache, and MySQL for the backend and HTML, CSS, and JavaScript for the frontend.`,
-      link: "https://github.com/EfuaS/neighbourcare",
-      icon: GraduationCap,
-      tone: "from-teal-400 via-cyan-400 to-blue-500",
-      noteTilt: "-rotate-[1deg]",
-      category: "Academic Roots",
-    },
-    {
-      title: "National Service - Junior Software Developer",
-      institution: "Accede Ghana",
-      duration: "2022 - 2023",
-      description: `Completed my one year national service as a Junior Software Developer, contributing to projects in FinTech, Community Outreach, and Real Estate, gaining hands-on coding and teamwork experience.`,
-      link: null,
-      icon: Workflow,
-      tone: "from-emerald-400 via-teal-300 to-cyan-400",
-      noteTilt: "rotate-[1deg]",
-      category: "Service Year",
-    },
-    {
-      title: "Meta Certified Frontend Developer",
-      institution: "Meta",
-      duration: "2023",
-      description: `Certified in modern frontend practice: HTML, CSS, JavaScript, and React. Proof that I keep pace with the craft as it evolves.`,
-      link: "https://coursera.org/share/86ef3b4defd4235ad55a1aeac97b9478",
-      icon: Award,
-      tone: "from-amber-500 via-orange-300 to-pink-500",
-      noteTilt: "-rotate-[2deg]",
-      category: "Certification",
-    },
-    {
-      title: "Frontend Software Engineer",
-      institution: "Accede Ghana",
-      duration: "2019 - Present",
-      description: `Helping to deliver high-quality software solutions to clients across various industries. I have also contributed to company growth by training and mentoring interns
-      and other National Service Personnel.`,
-      link: null,
-      icon: Sparkles,
-      tone: "from-fuchsia-300 via-purple-300 to-indigo-300",
-      noteTilt: "rotate-[2deg]",
-      category: "Day Job",
-    },
-    {
-      title: "In-Progress - Microsoft Azure Developer",
-      institution: "Microsoft",
-      duration: "Expected March 2026",
-      description: `Pursuing Microsoft Azure Developer certification to enhance my cloud computing and Azure skills for consulting and solution delivery from development to deployment.`,
-      link: null,
-      icon: Rocket,
-      tone: "from-sky-300 via-teal-200 to-lime-300",
-      noteTilt: "-rotate-[1deg]",
-      category: "Next-Up",
-    },
-  ];
 
   return (
-    <section className="pt-24 px-6 max-w-[80vw] mx-auto">
+    <section id="my-journey" className="pt-24 w-full mx-auto">
       <SectionHeader header="My Journey" title="Education & Experience" />
 
       {/* Timeline of Developer Journey */}
-      <div className="relative mt-12 pr-20">
-        {/* Faded edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-50 w-28 bg-linear-to-r from-[#0f172b] via-[#0f172b]/90 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-50 w-28 bg-linear-to-l from-[#0f172b] via-[#0f172b]/90 to-transparent" />
-
-        <div className="relative overflow-x-auto pb-6  pl-24">
+      <div className="relative">
+        <div className="relative overflow-x-auto pb-6  pl-6">
           {/* Timeline note card */}
           <div className="flex gap-6 md:gap-8 min-w-full snap-x snap-mandatory">
             {timeline.map((item, index) => {
@@ -87,7 +94,7 @@ export function Education() {
                 <article
                   key={item.title}
                   className="relative snap-start"
-                  data-aos="fade-up"
+                  data-aos="zoom-in"
                   data-aos-delay={index * 250}
                 >
                   <div className="flex flex-col items-start gap-4 relative">

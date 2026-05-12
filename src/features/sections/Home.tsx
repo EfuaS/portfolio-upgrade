@@ -2,6 +2,7 @@ import longHeadShot from "../../assets/headshot.png";
 import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import { useEffect } from "react";
+import DownloadResume from "../navigation-ui/DownloadResume";
 
 export function Home() {
   useEffect(() => {
@@ -10,7 +11,7 @@ export function Home() {
   }, []);
 
   return (
-    <section className="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
+    <section id="home" className="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
       <div className="h-[80vh] grid grid-cols-1  lg:grid-cols-2  items-center">
         {/* Mobile view smaller image */}
         <div
@@ -56,9 +57,7 @@ export function Home() {
           </div>
 
           {/* Name */}
-          <h1
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-secondary-text-color!"
-          >
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-secondary-text-color!">
             Lawrencia Efua Cobbina
           </h1>
 
@@ -68,10 +67,10 @@ export function Home() {
               options={{
                 strings: [
                   "Frontend Engineer",
-                  "Microsoft Azure Developer",
-                  "Microsoft Certified",
+                  "Microsoft Azure Developer Associate",
                   "Meta Certified",
-                  "Soon-to-be Flutter Developer",
+                  "Microsoft Certified",
+                  "In Progress Backend Engineer",
                 ],
                 autoStart: true,
                 loop: true,
@@ -83,30 +82,25 @@ export function Home() {
           <p className="text-sm max-w-lg leading-relaxed">
             Frontend Engineer specializing in building exceptional digital
             experiences. Passionate about creating intuitive, performant web
-            applications using modern technologies.
+            applications using modern technologies. Curently studying to include
+            Node.js backend development to my arsenal of skills.
           </p>
 
           {/* Metrics */}
           <div className="flex gap-8 pt-4">
-            <div>
+            {[
+              { label: "Experience", metric: "4 yrs" },
+              { label: "Projects", metric: "7" },
+              { label: "Certifications", metric: "2" },
+            ].map((stat)=> <div>
               <p className="text-4xl text-teal-400 text-center font-bold ">
-                3+
+               {stat.metric}
               </p>
-              <p className="text-sm  mt-1">Experience</p>
-            </div>
-            <div>
-              <p className="text-4xl text-teal-400 text-center font-bold ">
-                4+
-              </p>
-              <p className="text-sm  mt-1">Projects</p>
-            </div>
-            <div>
-              <p className="text-4xl text-teal-400 text-center font-bold ">
-                4+
-              </p>
-              <p className="text-sm  mt-1">Certificates</p>
-            </div>
+              <p className="text-sm  mt-1">{stat.label}</p>
+            </div>)}
           </div>
+
+          <DownloadResume />
         </div>
 
         {/* Right Side - Image Frame */}

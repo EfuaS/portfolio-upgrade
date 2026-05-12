@@ -13,53 +13,50 @@ import {
 } from "lucide-react";
 import SectionHeader from "../navigation-ui/SectionHeader";
 
+const coreStack = [
+  {
+    name: "React",
+    icon: <CodeXml size={22} className="text-sky-500" />,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: <Palette size={22} className="text-cyan-300" />,
+  },
+  {
+    name: "TypeScript",
+    icon: <ListCheck size={22} className="text-emerald-500" />,
+  },
+  {
+    name: "Figma",
+    icon: <PenTool size={22} className="text-pink-500" />,
+  },
+];
+
+const aspirations = [
+  {
+    label: "Node.js Backend Developer",
+    icon: <ShieldCheck size={20} className="text-amber-500" />,
+  },
+  {
+    label: "Flutter Engineer",
+    icon: <Smartphone size={20} className="text-sky-500" />,
+  },
+  {
+    label: "Travel the world",
+    icon: <PlaneTakeoff size={20} className="text-rose-400" />,
+  },
+  {
+    label: "Frontend Consultant",
+    icon: <GraduationCap size={20} className="text-lime-300" />,
+  },
+];
 export function About() {
-  const coreStack = [
-    {
-      name: "React",
-      icon: <CodeXml size={22} className="text-sky-500" />,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: <Palette size={22} className="text-cyan-300" />,
-    },
-    {
-      name: "TypeScript",
-      icon: <ListCheck size={22} className="text-emerald-500" />,
-    },
-    {
-      name: "Figma",
-      icon: <PenTool size={22} className="text-pink-500" />,
-    },
-  ];
-
-  const aspirations = [
-    {
-      label: "Microsoft AZ-204 Developer",
-      icon: <ShieldCheck size={20} className="text-amber-500" />,
-    },
-    {
-      label: "Flutter Engineer",
-      icon: <Smartphone size={20} className="text-sky-500" />,
-    },
-    {
-      label: "Travel the world",
-      icon: <PlaneTakeoff size={20} className="text-rose-400" />,
-    },
-    {
-      label: "Frontend Consultant",
-      icon: <GraduationCap size={20} className="text-lime-300" />,
-    },
-  ];
-
   return (
-    <section className="pt-36 md:pt-24 px-6 max-w-7xl mx-auto">
+    <section id="my-story" className="pt-36 md:pt-24 px-6 max-w-7xl mx-auto">
       <SectionHeader header="My Story" title="About the Developer" />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-4 lg:grid-rows-3 relative ">
-        <CodeXml
-          className="text-teal-900 size-52 md:size-100 animate-pulse absolute top-0 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none"
-        />
+        <CodeXml className="text-teal-900 size-52 md:size-100 animate-pulse absolute top-0 left-1/2 -translate-x-1/2 opacity-10 pointer-events-none" />
 
         {/* Who am I card (2x2) */}
         <div
@@ -72,22 +69,43 @@ export function About() {
               className="text-teal-300 rounded-full bg-teal-300/10 p-2.5"
               size={40}
             />
-            <h3 className="mt-0 text-lg font-semibold tracking-wide">
+            <h3 className="text-lg font-semibold tracking-wide">
               Who Am I?
             </h3>
           </div>
 
           <div className="flex-1 grid">
-            <p className="mt-6 m-auto text-primary-text-color leading-relaxed ">
-              I build thoughtful, fast interfaces that balance craft with
-              pragmatism. After years of{" "}
+            <p className="mt-2 m-auto text-primary-text-color leading-relaxed ">
+              I build thoughtful, high-performance interfaces where
               <span className="font-bold text-secondary-text-color/85">
                 {" "}
-                shipping product UI{" "}
+                clean component architecture
+              </span>{" "}
+              meets pragmatic product design. Having
+              <span className="font-bold text-secondary-text-color/85">
+                {" "}
+                shipped large-scale applications
+              </span>{" "}
+              with{" "}
+              <span className="font-bold text-secondary-text-color/85">
+                {" "}
+                complex data requirements
+              </span>{" "}
+              , I prioritize tight feedback loops between design and engineering
+              to ensure the final pixel serves the user's intent.
+            </p>
+            <p className="mt-6 m-auto text-primary-text-color leading-relaxed ">
+              Currently, I am expanding my focus across to{" "}
+              <span className="font-bold text-secondary-text-color/85">
+                full stack{" "}
               </span>
-              , I have a habit of pairing clean component architecture with
-              crisp visuals, mentoring teammates, and keeping a tight feedback
-              loop between design and engineering.
+              to better understand the end-to-end lifecycle of a product. My
+              'North Star' is to{" "}
+              <span className="font-bold text-secondary-text-color/85">
+                lead engineering teams
+              </span>{" "}
+              in building cohesive, scalable systems where technical rigor and
+              visual excellence are never mutually exclusive.
             </p>
           </div>
         </div>
@@ -120,14 +138,14 @@ export function About() {
         >
           <div>
             <p className="text-4xl text-center font-bold text-emerald-300">
-              3+
+              4
             </p>
             <p className="text-sm text-slate-400 font-semibold">
               Years of experience
             </p>
           </div>
           <div>
-            <p className="text-4xl text-center font-bold text-emerald-300">8</p>
+            <p className="text-4xl text-center font-bold text-emerald-300">7</p>
             <p className="text-sm text-slate-400 font-semibold">
               Projects shipped
             </p>
