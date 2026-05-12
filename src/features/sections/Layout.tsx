@@ -11,13 +11,13 @@ export function Layout() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="space-y-32 md:space-y-16">
+      <main className="space-y-32 md:space-y-24">
         <Home />
         <About />
         <Education />
         <Works />
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

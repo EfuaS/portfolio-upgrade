@@ -92,12 +92,14 @@ export function Home() {
               { label: "Experience", metric: "4 yrs" },
               { label: "Projects", metric: "7" },
               { label: "Certifications", metric: "2" },
-            ].map((stat)=> <div>
-              <p className="text-4xl text-teal-400 text-center font-bold ">
-               {stat.metric}
-              </p>
-              <p className="text-sm  mt-1">{stat.label}</p>
-            </div>)}
+            ].map((stat) => (
+              <div>
+                <p className="text-4xl text-teal-400 text-center font-bold ">
+                  {stat.metric}
+                </p>
+                <p className="text-sm  mt-1">{stat.label}</p>
+              </div>
+            ))}
           </div>
 
           <DownloadResume />
