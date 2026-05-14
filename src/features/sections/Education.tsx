@@ -101,10 +101,8 @@ export function Education() {
 
   useGSAP(
     () => {
-      const cards = gsap.utils.toArray(".milestone");
-
       gsap.to(milestonesContainer.current, {// target the milestones cards div
-        xPercent: -2.8 * cards.length, // translate the section to about 2 times the width of the cards to show all cards.
+        xPercent: -2.8 * timeline.length, // translate the section to about 2 times the width of the cards to show all cards.
         scrollTrigger: {
           trigger: myJourneySection.current, // trigger the translation when myJourneySection comes into view.
           start: "top 20%", //to properly center the milestone cards.
