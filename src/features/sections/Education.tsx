@@ -102,7 +102,7 @@ export function Education() {
   useGSAP(
     () => {
       gsap.to(milestonesContainer.current, {// target the milestones cards div
-        xPercent: -2.8 * timeline.length, // translate the section to about 2 times the width of the cards to show all cards.
+        xPercent: -2.9 * timeline.length, // translate the section to about 2 times the width of the cards to show all cards.
         scrollTrigger: {
           trigger: myJourneySection.current, // trigger the translation when myJourneySection comes into view.
           start: "top 20%", //to properly center the milestone cards.
@@ -118,14 +118,14 @@ export function Education() {
     <section
       id="my-journey"
       ref={myJourneySection}
-      className="w-full mx-auto"
+      className="w-full mx-auto overflow-hidden"
     >
       <SectionHeader header="My Journey" title="Education & Experience" />
 
       {/* Timeline of Developer Journey Milestones */}
       <div
         ref={milestonesContainer}
-        className="flex gap-6 md:gap-8 min-w-full  pl-6"
+        className="flex gap-6 md:gap-8 min-w-full  pl-10"
       >
         {timeline.map((item, index) => {
           const Icon = item.icon;
