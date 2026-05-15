@@ -11,6 +11,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Draggable } from "gsap/Draggable";
 
 const timeline = [
   {
@@ -80,20 +81,9 @@ const timeline = [
     noteTilt: "-rotate-[1deg]",
     category: "Next-Up",
   },
-  {
-    title: "In-Progress - Node.js Backend Developer",
-    institution: "IBM",
-    duration: "Current",
-    description: `Pursuing a course in Node.js backend development to become a full stack developer.`,
-    link: null,
-    icon: Rocket,
-    tone: "from-sky-300 via-teal-200 to-lime-300",
-    noteTilt: "-rotate-[1deg]",
-    category: "Next-Up",
-  },
 ];
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, Draggable);
 
 export function Education() {
   const milestonesContainer = useRef(null);
@@ -101,15 +91,30 @@ export function Education() {
 
   useGSAP(
     () => {
-      gsap.to(milestonesContainer.current, {// target the milestones cards div
-        xPercent: -2.9 * timeline.length, // translate the section to about 2 times the width of the cards to show all cards.
-        scrollTrigger: {
-          trigger: myJourneySection.current, // trigger the translation when myJourneySection comes into view.
-          start: "top 20%", //to properly center the milestone cards.
-          pin: true, // needed to stick the content while the animation plays
-          scrub: 1,
-        },
+      const matchMedia = gsap.matchMedia();
+
+      matchMedia.add("(min-width: 768px)", () => {
+        gsap.to(milestonesContainer.current, {
+          // target the milestones cards div
+          xPercent: -2.9 * timeline.length, // translate the section to about 2 times the width of the cards to show all cards.
+          scrollTrigger: {
+            trigger: myJourneySection.current, // trigger the translation when myJourneySection comes into view.
+            start: "top 20%", //to properly center the milestone cards.
+            pin: true, // needed to stick the content while the animation plays
+            scrub: 1,
+          },
+        });
+
       });
+      // Apply draggable plugin in mobil views
+      matchMedia.add("(max-width: 768px)", () => {
+        Draggable.create(milestonesContainer.current, {
+          type: "x",
+          // bounds: myJourneySection.current,
+        });
+      });
+
+      return () => matchMedia.revert();
     },
     { scope: myJourneySection },
   );
@@ -125,18 +130,18 @@ export function Education() {
       {/* Timeline of Developer Journey Milestones */}
       <div
         ref={milestonesContainer}
-        className="flex gap-6 md:gap-8 min-w-full  pl-10"
+        className="flex gap-6 md:gap-8 min-w-full pl-10"
       >
         {timeline.map((item, index) => {
           const Icon = item.icon;
           return (
             <article
               key={item.title}
-              className="relative milestone"
+              className="milestone"
               data-aos="zoom-in"
               data-aos-delay={index * 250}
             >
-              <div className="flex flex-col items-start gap-4 relative">
+              <div className="flex flex-col items-start gap-4 ">
                 <div className="relative">
                   {/* Timeline circular steps pinned with icons */}
                   <div className="size-12 rounded-full bg-linear-to-br from-teal-400 to-cyan-500 flex items-center justify-center shadow-lg shadow-teal-400/40">

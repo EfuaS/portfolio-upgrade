@@ -12,21 +12,15 @@ export function Home() {
 
   return (
     <section id="home" className="pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
-      <div className="h-[80vh] grid grid-cols-1  lg:grid-cols-2  items-center">
+      <div className="lg:h-[80vh] grid grid-cols-1  lg:grid-cols-2  items-center">
         {/* Mobile view smaller image */}
-        <div
-          data-aos="zoom-in-left"
-          data-aos-duration="1000"
-          className="md:hidden flex items-center justify-center mb-6"
-        >
-          <div className="size-full rounded-full shadow-xl overflow-hidden">
+          <div className="size-80 m-auto block mb-4 md:hidden rounded-full shadow-xl overflow-hidden">
             <img
               src={longHeadShot}
               alt="Profile"
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
 
         {/* Tablet view medium sized image */}
         <div
@@ -50,11 +44,9 @@ export function Home() {
           className="flex flex-col justify-center space-y-6"
         >
           {/* Open to Work Badge */}
-          <div className="inline-flex items-center w-fit">
-            <span className="px-4 py-2 bg-teal-900/50 text-teal-300 rounded-full text-xs font-medium animate-bounce">
+            <span className="px-4 py-2 w-fit bg-teal-900/50 text-teal-300 rounded-full text-xs font-medium animate-bounce">
               Open to work
             </span>
-          </div>
 
           {/* Name */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-secondary-text-color!">

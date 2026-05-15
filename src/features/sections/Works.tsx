@@ -16,15 +16,25 @@ export function Works() {
 
   useGSAP(
     () => {
-      gsap.to(works.current, {
-        yPercent: projects.length * -11,
-        scrollTrigger: {
-          trigger: myWorksSection.current,
-          pin: true,
-          scrub: 2,
-          start: "top 15%",
-        },
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 768px)", () => {
+        gsap.to(works.current, {
+          yPercent: projects.length * -11,
+          scrollTrigger: {
+            trigger: myWorksSection.current,
+            pin: true,
+            scrub: 2,
+            start: "top 15%",
+          },
+        });
       });
+
+      mm.add("(max-width: 767px)", () => {
+        // No GSAP animation here! GSAP automatically kills the desktop ScrollTrigger when entering this breakpoint.
+      });
+
+      return () => mm.revert();
     },
     { scope: myWorksSection },
   );
@@ -33,9 +43,9 @@ export function Works() {
     <section
       ref={myWorksSection}
       id="my-works"
-      className="grid grid-cols-3 h-screen overflow-hidden"
+      className="grid grid-cols-1 lg:grid-cols-3 lg:h-screen lg:overflow-hidden"
     >
-      <div className="col-span-1 grid place-content-center max-h-screen">
+      <div className="lg:col-span-1 grid place-content-center lg:max-h-screen">
         <SectionHeader
           title="My Works"
           header="Portfolio of Projects"
@@ -44,10 +54,13 @@ export function Works() {
       </div>
       <div
         ref={works}
-        className="col-span-2 grid place-content-center gap-28 pb-20"
+        className="lg:col-span-2 grid place-content-center gap-28 pb-20 pt-32 h-[90vh] lg:h-auto overflow-y-scroll lg:overflow-visible"
       >
         {projects.map((project) => (
-          <div key={project.id} className="glass-card min-h-[70vh] h-fit w-4xl" >
+          <div
+            key={project.id}
+            className="glass-card lg:min-h-[70vh] h-fit w-90 md:w-4xl"
+          >
             <div className="bg-gray-400/5 h-100 rounded-t-xl overflow-hidden">
               <img
                 src={headShort}
@@ -59,9 +72,7 @@ export function Works() {
                 {project.name}
               </h3>
               <p>{project.duration}</p>
-              <p className="text-primary-text-color ">
-                {project.about}
-              </p>
+              <p className="text-primary-text-color ">{project.about}</p>
 
               <div className="mt-4 flex flex-wrap gap-2  text-sm text-slate-200">
                 {project.tools.map((tech) => (
