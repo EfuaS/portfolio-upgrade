@@ -1,65 +1,81 @@
 import SectionHeader from "../navigation-ui/SectionHeader";
 import headShort from "../../assets/headshot.png";
-import { CodeXml, ListCheck, Palette, PenTool } from "lucide-react";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { experienceData } from "../../utils/projectsContent";
 
-  const coreStack = [
-    {
-      name: "React",
-      icon: <CodeXml size={22} className="text-sky-500" />,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: <Palette size={22} className="text-cyan-300" />,
-    },
-    {
-      name: "TypeScript",
-      icon: <ListCheck size={22} className="text-emerald-500" />,
-    },
-    {
-      name: "Figma",
-      icon: <PenTool size={22} className="text-pink-500" />,
-    },
-  ];
+const projects = experienceData;
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function Works() {
+  const myWorksSection = useRef(null);
+  const works = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.to(works.current, {
+        yPercent: projects.length * -11,
+        scrollTrigger: {
+          trigger: myWorksSection.current,
+          pin: true,
+          scrub: 2,
+          start: "top 15%",
+        },
+      });
+    },
+    { scope: myWorksSection },
+  );
+
   return (
-    <section id="my-works" className="grid grid-cols-3 h-screen ">
-      <div className="col-span-1 grid place-content-center">
+    <section
+      ref={myWorksSection}
+      id="my-works"
+      className="grid grid-cols-3 h-screen overflow-hidden"
+    >
+      <div className="col-span-1 grid place-content-center max-h-screen">
         <SectionHeader
-          title="GrantSpace"
-          header="My Works"
+          title="My Works"
+          header="Portfolio of Projects"
           isCentered={false}
         />
       </div>
-      <div data-aos="zoom-out-up" data-aos-duration="2500" className="col-span-2 grid place-content-center ">
-        <div className="glass-card h-[70vh] w-4xl">
-          <div className="bg-gray-400/5 h-[75%] rounded-t-xl overflow-hidden">
-            <img src={headShort} className="object-contain size-full hover:scale-115 duration-1000 ease-in-out" />
-          </div>
-          <div className="mt-4 space-y-2">
-            <h3 className="text-2xl  font-semibold text-secondary-text-color!">
-              AI Grant Discovery Platform
-            </h3>
-            <p className="text-primary-text-color ">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
-              ducimus minima libero esse dolorem iste, recusandae possimus saepe
-              ab ut nobis, blanditiis quam, neque corrupti repudiandae ullam
-              quasi doloremque facilis.
-            </p>
+      <div
+        ref={works}
+        className="col-span-2 grid place-content-center gap-28 pb-20"
+      >
+        {projects.map((project) => (
+          <div key={project.id} className="glass-card min-h-[70vh] h-fit w-4xl" >
+            <div className="bg-gray-400/5 h-100 rounded-t-xl overflow-hidden">
+              <img
+                src={headShort}
+                className="object-contain size-full hover:scale-115 duration-1000 ease-in-out"
+              />
+            </div>
+            <div className="mt-4 space-y-2">
+              <h3 className="text-2xl  font-semibold text-secondary-text-color!">
+                {project.name}
+              </h3>
+              <p>{project.duration}</p>
+              <p className="text-primary-text-color ">
+                {project.about}
+              </p>
 
-            <div className="mt-4 flex flex-wrap gap-2  text-sm text-slate-200">
-              {coreStack.map((tech) => (
-                <div
-                  key={tech.name}
-                  className="flex items-center gap-2 bg-gray-900 rounded-md px-3 py-1"
-                >
-                  {tech.icon}
-                  <p>{tech.name}</p>
-                </div>
-              ))}
+              <div className="mt-4 flex flex-wrap gap-2  text-sm text-slate-200">
+                {project.tools.map((tech) => (
+                  <div
+                    key={tech}
+                    className="flex items-center gap-2 bg-accent-color/7 text-accent-color rounded-2xl px-4 py-1"
+                  >
+                    <p>{tech}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );
