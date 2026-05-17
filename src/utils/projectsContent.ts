@@ -37,7 +37,7 @@ export const experienceData: ExperienceDTO[] = [
     name: "GrantSpace",
     role: "Frontend Engineer",
     about: `AI-powered grant discovery and proposal support platform`,
-    duration: "OCT -SEPT 2025",
+    duration: "OCT - SEPT 2025",
     businessImpact: `The AI-powered features improved the usability and value of the platform by helping users discover relevant grants more efficiently and strengthen their proposal-writing workflows. The addition of editor intelligence and version history made the drafting experience more structured, interactive, and user-friendly.`,
     challengeFaced: `A key challenge was presenting analytics dynamically for different user roles and data types without creating duplicated UI logic. I solved this by using reusable React components and configuration-driven rendering, which kept the codebase lean while supporting tailored metric views.`,
     developerPride: `I am proud of independently driving frontend delivery for a high-workflow product and turning complex event operations into a cleaner, more intuitive experience for both organizers and participants`,
