@@ -1,10 +1,11 @@
 import SectionHeader from "../navigation-ui/SectionHeader";
 import headShort from "../../assets/headshot.png";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { experienceData } from "../../utils/projectsContent";
+import { experienceData, ExperienceDTO } from "../../utils/projectsContent";
+import ProjectModal from "../navigation-ui/ProjectModal";
 
 const projects = experienceData;
 
@@ -13,6 +14,9 @@ gsap.registerPlugin(ScrollTrigger);
 export function Works() {
   const myWorksSection = useRef(null);
   const works = useRef(null);
+  const [selectedProject, setSelectedProject] = useState<ExperienceDTO | null>(
+    null,
+  );
 
   useGSAP(
     () => {
@@ -59,7 +63,8 @@ export function Works() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="glass-card lg:min-h-[70vh] h-fit w-90 md:w-4xl"
+            className="glass-card lg:min-h-[70vh] h-fit w-90 md:w-4xl cursor-pointer"
+            onClick={() => setSelectedProject(project)}
           >
             <div className="bg-gray-400/5 h-100 rounded-t-xl overflow-hidden">
               <img
@@ -88,6 +93,11 @@ export function Works() {
           </div>
         ))}
       </div>
+      <ProjectModal
+        isOpen={!!selectedProject}
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 }
